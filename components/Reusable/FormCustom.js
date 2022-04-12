@@ -8,6 +8,7 @@ import Select from "../Inputs/Select";
 import useFetch from "../../hooks/useFetch";
 import { serialize } from "object-to-formdata";
 import FormModal from "./FormModal";
+import { useRouter } from "next/router";
 
 export default function FormCustom({
   validate,
@@ -27,14 +28,19 @@ export default function FormCustom({
     req.options,
     file
   );
-
-  console.log(req);
+  const router = useRouter();
 
   useEffect(() => {
     if (data) {
       if (data?.status == "success") {
         setModal({ msg: messages.success, status: "success" });
         setBody("");
+
+        if (req.url === "login") {
+          setTimeout(() => {
+            router.push("/");
+          }, 1000);
+        }
       } else if (data?.status == "fail" || "error") {
         setModal({ msg: data.message, status: "fail" });
         setBody("");

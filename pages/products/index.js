@@ -19,7 +19,7 @@ export default function Products(props) {
       ></PageHead>
       <section className="products bg-light spacing">
         <div className="container">
-          <h1 className="heading-orange products__heading">Сите производи</h1>
+          <h1 className="heading-orange products__heading">Производи</h1>
           <div className="products__grid">
             {data.map((product, idx) => {
               return (
