@@ -6,6 +6,7 @@ const nextConfig = {
   image: {
     domains: ["http://localhost:3080", "https://danai-backend.herokuapp.com/"],
   },
+  optimizeFileTracing: false,
   // reactStrictMode: true,
 };
 
