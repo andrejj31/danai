@@ -24,7 +24,7 @@ export default function Edit(props) {
       .required("Ова поле е задолжително"),
     quantity: Yup.string().required("Ова поле е задолжително"),
     transportPackages: Yup.string().required("Ова поле е задолжително"),
-    landingPage: Yup.bool().required("Ова поле е задолжително"),
+    // landingPage: Yup.bool().required("Ова поле е задолжително"),
     category: Yup.string().required("Ова поле е задолжително"),
   });
 
@@ -59,15 +59,15 @@ export default function Edit(props) {
       label: "Категорија на продуктот",
       categories: categories,
     },
-    {
-      name: "landingPage",
-      type: "select",
-      label: "Насловна страна",
-      categories: [
-        { name: "true", value: true },
-        { name: "false", value: false },
-      ],
-    },
+    // {
+    //   name: "landingPage",
+    //   type: "select",
+    //   label: "Насловна страна",
+    //   categories: [
+    //     { name: "true", value: true },
+    //     { name: "false", value: false },
+    //   ],
+    // },
     // {
     //   name: "landingPage",
     //   type: "select",
