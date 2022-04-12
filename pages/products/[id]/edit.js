@@ -116,8 +116,6 @@ export async function getStaticProps({ params }) {
   const categories = await categoriesRes.json();
   const product = await res.json();
 
-  console.log(id);
-  console.log(product.data);
   return {
     props: { product: product.data, categories },
     revalidate: 1,
