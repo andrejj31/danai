@@ -89,37 +89,52 @@ export default function Edit(props) {
   );
 }
 
-export async function getStaticPaths() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}products`);
-  const dataReady = await res.json();
+// export async function getStaticPaths() {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}products`);
+//   const dataReady = await res.json();
 
-  const paths = dataReady.data.map((product) => ({
-    params: {
-      id: product._id,
-    },
-  }));
+//   const paths = dataReady.data.map((product) => ({
+//     params: {
+//       id: product._id,
+//     },
+//   }));
 
-  return {
-    paths,
-    fallback: false,
-  };
-}
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }
 
-export async function getStaticProps({ params }) {
-  const { id } = params;
+// export async function getStaticProps({ params }) {
+//   const { id } = params;
+//   const res = await fetch(
+//     `${process.env.NEXT_PUBLIC_SERVER_API}products/${id}`
+//   );
+//   const categoriesRes = await fetch(
+//     `${process.env.NEXT_PUBLIC_SERVER_API}product-categories`
+//   );
+//   const categories = await categoriesRes.json();
+//   const product = await res.json();
+
+//   return {
+//     props: { product: product.data, categories },
+//     revalidate: 1,
+//   };
+// }
+
+export async function getServerSideProps(context) {
+  const id = context.params.id;
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_SERVER_API}products/${id}`
   );
+
   const categoriesRes = await fetch(
     `${process.env.NEXT_PUBLIC_SERVER_API}product-categories`
   );
   const categories = await categoriesRes.json();
   const product = await res.json();
-
   return {
     props: { product: product.data, categories },
-    revalidate: 1,
   };
 }
-
 Edit.requireAuth = true;

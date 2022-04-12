@@ -20,28 +20,37 @@ export default function index({ data }) {
   );
 }
 
-export async function getStaticPaths() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}jobs`);
-  const dataReady = await res.json();
+// export async function getStaticPaths() {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}jobs`);
+//   const dataReady = await res.json();
 
-  const paths = dataReady.data.map((job) => ({
-    params: {
-      id: job._id,
-    },
-  }));
+//   const paths = dataReady.data.map((job) => ({
+//     params: {
+//       id: job._id,
+//     },
+//   }));
 
-  return {
-    paths,
-    fallback: false,
-  };
-}
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }
 
-export async function getStaticProps({ params }) {
-  const { id } = params;
+// export async function getStaticProps({ params }) {
+//   const { id } = params;
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}jobs/${id}`);
+//   const data = await res.json();
+//   return {
+//     props: data,
+//     revalidate: 1,
+//   };
+// }
+
+export async function getServerSideProps(context) {
+  const id = context.params.id;
   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}jobs/${id}`);
   const data = await res.json();
   return {
     props: data,
-    revalidate: 1,
   };
 }
