@@ -4,7 +4,7 @@ import Products from "../components/Home/Products";
 import Contact from "../components/Home/Contact";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ locale }) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_SERVER_API}products?lang=${locale}`
   );
@@ -14,7 +14,7 @@ export async function getStaticProps({ locale }) {
       ...(await serverSideTranslations(locale, ["home"])),
       data,
     },
-    revalidate: 1,
+    // revalidate: 1,
   };
 }
 

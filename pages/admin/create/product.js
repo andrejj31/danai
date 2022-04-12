@@ -21,7 +21,7 @@ export default function Product(props) {
     quantity: Yup.string().required("Ова поле е задолжително"),
     transportPackages: Yup.string().required("Ова поле е задолжително"),
     category: Yup.string().required("Ова поле е задолжително"),
-    // landingPage: Yup.bool().required("Ова поле е задолжително"),
+    landingPage: Yup.bool().required("Ова поле е задолжително"),
     image: Yup.mixed().required("Мора да имате внесено слика од продуктот"),
   });
 
@@ -34,7 +34,7 @@ export default function Product(props) {
     transportPackages: "",
     category: "",
     image: "",
-    // landingPage: "",
+    landingPage: "",
     translation: {
       en: {
         name: "",
@@ -70,15 +70,15 @@ export default function Product(props) {
       label: "Категорија на продуктот",
       categories: props.data,
     },
-    // {
-    //   name: "landingPage",
-    //   type: "select",
-    //   label: "Насловна страна",
-    //   categories: [
-    //     { name: "Да", value: true },
-    //     { name: "Не", value: false },
-    //   ],
-    // },
+    {
+      name: "landingPage",
+      type: "select",
+      label: "Насловна страна",
+      categories: [
+        { name: "Да", value: true },
+        { name: "Не", value: false },
+      ],
+    },
     { name: "image", type: "file", label: "Фотографија од продуктот" },
   ];
   const req = {
