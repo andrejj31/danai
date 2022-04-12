@@ -18,7 +18,7 @@ export default function Job(props) {
     name: "",
     description: "",
     status: "",
-    qualifications: ["fdfd", "fdfdf", "gfgf"],
+    qualifications: [],
     translation: {
       en: {
         name: "",
