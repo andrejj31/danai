@@ -1,7 +1,30 @@
 .login {
   max-width: 40%;
 
+  @media only screen and (max-width: $bp-max) {
+    max-width: 50%;
+  }
+  @media only screen and (max-width: $bp-huge) {
+    max-width: 60%;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    max-width: 70%;
+  }
+  @media only screen and (max-width: $bp-small) {
+    max-width: 80%;
+  }
+  @media only screen and (max-width: $bp-smallest) {
+    max-width: 90%;
+  }
   &__heading {
     text-align: center;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 2.5rem;
+    }
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 2rem;
+    }
   }
 }

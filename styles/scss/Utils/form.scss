@@ -25,6 +25,10 @@
       font-weight: 700;
       font-size: 4rem;
       font-style: italic;
+
+      @media only screen and (max-width: $bp-largest) {
+        font-size: 3rem;
+      }
     }
     &__group {
       display: flex;
