@@ -1,0 +1,43 @@
+.footer {
+  background-color: $color-dark;
+  padding: 2.5rem 0;
+  font-weight: 600;
+  flex-shrink: 0;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+
+    > img {
+      @media only screen and (max-width: $bp-large) {
+        width: 12rem;
+      }
+    }
+  }
+  &__nav {
+    display: flex;
+    color: $color-org-light;
+    gap: 1rem;
+    font-size: 1.6rem;
+  }
+  &__contact {
+    display: flex;
+    gap: 1rem;
+    a {
+      svg {
+        color: $color-white;
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+  &__copy {
+    color: #c9c9c9;
+    font-size: 1.2rem;
+    font-style: italic;
+    span {
+      color: red;
+    }
+  }
+}

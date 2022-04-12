@@ -1,0 +1,54 @@
+.pageHead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+      96.13deg,
+      #717171 0%,
+      rgba(57, 32, 12, 0) 102.15%,
+      rgba(255, 115, 5, 0) 102.15%
+    ),
+    url(/Base/lab-2.png);
+  background-position: center;
+  background-size: cover;
+  height: 45rem;
+  color: $color-white;
+  line-height: 1.2;
+
+  @media only screen and (max-width: $bp-small) {
+    height: 30rem;
+  }
+  h1 {
+    font-size: 9rem;
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 6rem;
+    }
+  }
+
+  span {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    width: 45%;
+    line-height: 1.4;
+
+    @media only screen and (max-width: $bp-huge) {
+      width: 60%;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      width: 70%;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.6rem;
+      width: 80%;
+    }
+  }
+}

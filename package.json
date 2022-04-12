@@ -6,15 +6,39 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css",
+    "compile:sass": "node-sass styles/scss/global.scss styles/css/style.comp.css",
+    "compress:css": "node-sass styles/css/style.prefix.css styles/css/style.css --output-style compressed",
+    "prefix:css": "postcss --use autoprefixer -b \"last 5 versions\" styles/css/style.comp.css -o styles/css/style.prefix.css",
+    "watch:sass": "node-sass styles/scss/global.scss styles/css/style.css -w"
   },
   "dependencies": {
-    "next": "12.1.1",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "autoprefixer": "^9.8.6",
+    "formik": "^2.2.9",
+    "jsonexport": "^3.2.0",
+    "keen-slider": "^6.6.5",
+    "next": "12.0.1",
+    "next-i18next": "^11.0.0",
+    "node-sass": "^6.0.1",
+    "object-to-formdata": "^4.4.2",
+    "postcss": "^8.2.1",
+    "postcss-cli-simple": "^3.1.0",
+    "ra-data-json-server": "^3.19.11",
+    "ra-data-simple-rest": "^3.19.11",
+    "ra-jsonapi-client": "^0.8.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-admin": "^3.19.11",
+    "react-dom": "17.0.2",
+    "react-paginate": "^8.1.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
-    "eslint": "8.12.0",
-    "eslint-config-next": "12.1.1"
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.0.1"
   }
 }

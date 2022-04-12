@@ -1,0 +1,31 @@
+// Colors
+$color-white: #fff;
+$color-bg-light: #fafafa;
+$color-org-light: #ddc597;
+$color-orange: #ff7d34;
+$color-orange-nav: #b55a00;
+$color-grey: #535353;
+$color-grey-light: #b6b6b6;
+$color-grey-dark: #585858;
+$color-dark: #1b1917;
+$color-img: #fffaf6;
+
+// Breakpoints
+$bp-max: 112.5em; // 1800px
+$bp-hugest: 100em; // 1600px
+$bp-huge: 87.5em; // 1400px
+$bp-largest: 75em; //1200px
+$bp-large: 62.5em; //1000px
+$bp-medium: 50em; // 800px
+$bp-small: 37.5em; // 600px
+$bp-smallest: 31.25em; // 500px
+
+// Linear Gradient
+$linear-orange: linear-gradient(
+  91.93deg,
+  #ffaa6c 0%,
+  rgba(255, 191, 27, 0.71) 129.54%
+);
+
+// Box Shadow
+$box-shadow-light: 0px 2px 20px rgba(0, 0, 0, 0.05);

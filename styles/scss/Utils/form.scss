@@ -1,0 +1,108 @@
+.form {
+  &-basic {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 1rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-columns: 1fr;
+    }
+
+    &__container {
+      background-color: $color-white;
+      box-shadow: $box-shadow-light;
+      padding: 3rem 2rem;
+    }
+
+    &__bg {
+      padding: 3rem 2rem;
+    }
+
+    &__heading {
+      color: $color-orange;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 4rem;
+      font-style: italic;
+    }
+    &__group {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 1.8rem;
+        font-style: italic;
+        font-weight: 500;
+        color: $color-grey;
+      }
+
+      &-full {
+        grid-column: -1/1;
+      }
+    }
+
+    &__input {
+      background-color: $color-bg-light;
+      padding: 1rem;
+      border: 1px solid transparent;
+      transition: all 0.5s;
+      border-radius: 0.5rem;
+    }
+
+    &__textarea {
+      textarea {
+        resize: vertical;
+        background-color: $color-bg-light;
+      }
+    }
+    // button {
+    //   margin-top: 2rem;
+    //   grid-column: -1/1;
+    //   justify-self: center;
+    // }
+
+    &__file {
+    }
+
+    &__errormsg {
+      color: red;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    &__invalid {
+      border: 1px solid red;
+    }
+
+    &__array {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      > input {
+        flex-grow: 1;
+      }
+
+      > button {
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+
+      &-add {
+        font-size: 1.4rem;
+        font-weight: 700;
+        width: fit-content;
+      }
+    }
+
+    &__cta {
+      margin-top: 2rem;
+      grid-column: -1/1;
+      justify-self: center;
+    }
+  }
+}

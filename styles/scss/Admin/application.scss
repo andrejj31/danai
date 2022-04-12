@@ -1,0 +1,32 @@
+.applications {
+  padding: 3rem 0;
+  &__grid {
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__heading {
+    font-weight: 700;
+    color: $color-orange;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-style: italic;
+  }
+}
+
+.application {
+  padding: 1rem;
+  background-color: $color-white;
+  border-radius: 0.5rem;
+  box-shadow: $box-shadow-light;
+
+  &__about {
+    margin-bottom: 1rem;
+    li {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $color-grey;
+    }
+  }
+}

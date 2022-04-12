@@ -1,0 +1,59 @@
+.article {
+  &__content {
+    align-items: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      flex-direction: column;
+      gap: 5rem;
+    }
+  }
+
+  &__typography {
+    p {
+      color: $color-grey;
+      font-weight: 600;
+      font-size: 1.4rem;
+    }
+  }
+  &__img {
+    position: relative;
+    flex-basis: 70%;
+    z-index: 1;
+    img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: $box-shadow-light;
+    }
+
+    &:before {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      background: linear-gradient(
+        91.93deg,
+        #ffaa6c 0%,
+        rgba(255, 191, 27, 0.71) 129.54%
+      );
+      border-radius: 3px;
+      bottom: -10px;
+      left: -20px;
+      width: 25rem;
+      height: 15rem;
+    }
+    &:after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      background: linear-gradient(
+        91.93deg,
+        #ffaa6c 0%,
+        rgba(255, 191, 27, 0.71) 129.54%
+      );
+      border-radius: 3px;
+      top: -10px;
+      right: -20px;
+      width: 25rem;
+      height: 15rem;
+    }
+  }
+}

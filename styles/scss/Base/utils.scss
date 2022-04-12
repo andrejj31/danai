@@ -1,0 +1,114 @@
+.container {
+  margin-inline: auto;
+  width: Min(90%, 120rem);
+}
+
+.split {
+  display: flex;
+
+  & * {
+    flex-basis: 100%;
+  }
+  & > * + * {
+    margin-left: 2em;
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.menu-x {
+  display: flex;
+  gap: 1rem;
+}
+
+.bg-light {
+  background-color: $color-bg-light;
+}
+
+.heading-orange {
+  color: $color-orange;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// Buttons
+.cta-linear {
+  background: $linear-orange;
+  color: $color-white !important;
+  font-weight: 700;
+  padding: 1rem 3.5rem;
+  font-size: 1.3rem;
+  border-radius: 3px;
+  box-shadow: $box-shadow-light;
+  cursor: pointer;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 1rem 2.5rem;
+  }
+}
+
+.cta-classic {
+  background-color: transparent;
+  color: $color-orange !important;
+  font-weight: 800;
+  font-size: 1.6rem;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s;
+
+  &:hover {
+    border-bottom: 1px solid $color-orange;
+  }
+}
+
+.bg-padding {
+  padding: 3rem 0;
+}
+
+.spacing {
+  margin: 15rem 0;
+}
+
+.spacing-sm {
+  margin: 5rem 0;
+}
+
+.dots {
+  display: flex;
+  padding: 10px 0;
+  justify-content: center;
+}
+
+.dot {
+  border: none;
+  width: 10px;
+  height: 10px;
+  background: #c5c5c5;
+  border-radius: 50%;
+  margin: 0 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dot:focus {
+  outline: none;
+}
+
+.dot.active {
+  background: #000;
+}
+
+.product.keen-slider__slide {
+  .admin-options {
+    display: none;
+  }
+}

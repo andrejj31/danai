@@ -1,0 +1,72 @@
+.career {
+  padding: 3rem 0;
+  &__ad {
+    background-color: $color-white;
+    box-shadow: $box-shadow-light;
+    padding: 3rem;
+    border-radius: 0.5rem;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 2rem;
+    }
+  }
+
+  &__title {
+    line-height: 1.2;
+    margin-bottom: 5rem;
+    h5 {
+      color: $color-orange;
+      font-weight: 600;
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-weight: 600;
+      color: $color-grey;
+      font-size: 1.5rem;
+      span {
+        font-weight: 700;
+        font-style: italic;
+        color: #33f82f;
+      }
+    }
+  }
+
+  &__subtitle {
+    color: $color-orange;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.8rem;
+  }
+
+  &__about {
+    margin-top: 4rem;
+    p {
+      font-weight: 500;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__requirements {
+    margin: 4rem 0;
+    list-style: inside;
+    &:before {
+      content: attr(aria-label);
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.8rem;
+      color: $color-orange;
+    }
+
+    li {
+      margin-left: 2rem;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: $color-grey;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.modal {
+  color: $color-white !important;
+  text-align: center !important;
+  padding: 0.5rem 0;
+  font-size: 1.8rem;
+  text-align: center;
+  &-success {
+    background-color: #00cb64;
+  }
+
+  &-fail {
+    background-color: #ef4252;
+  }
+}

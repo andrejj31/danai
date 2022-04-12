@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px
+  scroll-behavior: smooth;
+
+  @media only screen and (max-width: $bp-huge) {
+    font-size: 60.5%;
+  }
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 58.5%;
+  }
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50.5%;
+  }
+}
+
+main {
+  margin-top: auto;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+body {
+  line-height: 1.6;
+  font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button,
+button:focus {
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+section {
+  // padding: 5rem 0;
+  // margin: 10rem 0;
+}
+
+h3 {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+
+input,
+textarea {
+  border: none;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+select {
+  border: none;
+  outline: none;
+  // appearance: none;
+  cursor: pointer;
+}

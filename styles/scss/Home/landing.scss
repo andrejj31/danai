@@ -1,0 +1,76 @@
+.landing {
+  background: linear-gradient(
+      100.71deg,
+      rgba(232, 83, 19, 0.5) 26.83%,
+      rgba(227, 227, 211, 0.145) 101.18%,
+      rgba(201, 194, 191, 0.405) 77.18%
+    ),
+    url(https://www.danaifarm.com.mk/sites/default/files/aboutHome_0.png);
+  background-size: cover;
+  height: 45rem;
+  position: relative;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10rem;
+
+    > h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      color: $color-white;
+      letter-spacing: 0.5rem;
+    }
+
+    > p {
+      font-weight: 600;
+      font-size: 2rem;
+      font-style: italic;
+      color: $color-white;
+    }
+  }
+
+  &__brands {
+    position: absolute;
+    width: inherit;
+    bottom: -3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__brand {
+    background-color: $color-white;
+    border-radius: 1.5rem;
+    box-shadow: $box-shadow-light;
+    padding: 2rem 3rem;
+    .cta-classic {
+      display: none;
+    }
+    h4 {
+      font-size: 4rem;
+      color: #414141;
+      position: relative;
+      z-index: 3;
+
+      @media only screen and (max-width: $bp-small) {
+        font-size: 3rem;
+      }
+
+      &:before {
+        content: attr(data-before-content);
+        position: absolute;
+        left: -2rem;
+        top: 0;
+        font-size: 5rem;
+        color: #c1c1c1;
+        opacity: 0.2;
+        z-index: 2;
+        @media only screen and (max-width: $bp-small) {
+          font-size: 4rem;
+          top: -0.5rem;
+        }
+      }
+    }
+  }
+}
