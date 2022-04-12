@@ -57,6 +57,7 @@ export default function Product({ setPopup, className, product }) {
           src={loaderUrl}
           layout="fill"
           objectFit="contain"
+          priority={true}
           // src={`${process.env.NEXT_PUBLIC_SERVER_IMAGES}Products/${image}.png`}
         ></Image>
       </div>

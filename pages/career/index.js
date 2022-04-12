@@ -25,7 +25,7 @@ export default function Career({ data: careerAds }) {
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}jobs`);
   const data = await res.json();
 

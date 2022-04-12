@@ -7,18 +7,22 @@ export default function Select({ label, categories, className, ...props }) {
     <div className={`form-basic__group ${className ? className : ""}`}>
       <label htmlFor={field.name}>{label}</label>
       <select className="form-basic__input" {...field} {...props}>
-        <option disabled defaultChecked>
-          Одберете категорија
-        </option>
+        <option defaultChecked>{label}</option>
         {categories.map((category, idx) => {
           let name;
           if (category && category.name) {
             name = category.name;
+
+            if (name == "true") {
+              name = "Да";
+            } else if (name == "false") {
+              name = "Не";
+            }
           } else {
             name = category;
           }
           return (
-            <option key={idx} value={name}>
+            <option key={idx} value={category.value}>
               {name}
             </option>
           );
