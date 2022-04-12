@@ -2,10 +2,9 @@ import React from "react";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faSquarePhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-{
-  /* <FontAwesomeIcon icon={faBold} />; */
-}
+import Link from "next/link";
 import { useTranslation } from "next-i18next";
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -13,13 +12,13 @@ export default function Footer() {
         <img src="/Base/logo.png" alt="" />
         <ul className="footer__nav">
           <li>
-            <a href="">Почетна</a>
+            <Link href="/">Почетна</Link>
           </li>
           <li>
-            <a href="">Производи</a>
+            <Link href="/products">Производи</Link>
           </li>
           <li>
-            <a href="">Кариера</a>
+            <Link href="/products">Кариера</Link>
           </li>
         </ul>
         <div className="footer__contact">

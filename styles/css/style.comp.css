@@ -115,10 +115,13 @@ select {
   font-size: 1.3rem;
   border-radius: 3px;
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.05);
-  cursor: pointer; }
+  cursor: pointer;
+  transition: all 0.2s; }
   @media only screen and (max-width: 50em) {
     .cta-linear {
       padding: 1rem 2.5rem; } }
+  .cta-linear:hover, .cta-linear:focus {
+    transform: scale(1.05); }
 
 .cta-classic {
   background-color: transparent;
@@ -128,7 +131,7 @@ select {
   cursor: pointer;
   border-bottom: 1px solid transparent;
   transition: all 0.2s; }
-  .cta-classic:hover {
+  .cta-classic:hover, .cta-classic:focus {
     border-bottom: 1px solid #ff7d34; }
 
 .bg-padding {
@@ -230,6 +233,7 @@ select {
         .nav__secondary > div img {
           width: 12rem; } }
     .nav__secondary-menu {
+      align-items: center;
       margin-left: auto;
       gap: 1.5rem !important; }
       .nav__secondary-menu li {
@@ -272,6 +276,9 @@ select {
             border-bottom: 1px solid #ddc597; }
           .nav__secondary-menu > li a {
             font-size: 1.8rem; } }
+    @media only screen and (max-width: 50em) and (max-width: 37.5em) {
+      .nav__secondary-menu > li a {
+        font-size: 1.4rem; } }
     .nav__secondary-mobile {
       opacity: 1;
       visibility: visible; }
@@ -901,12 +908,25 @@ select {
     gap: 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr); }
+    @media only screen and (max-width: 50em) {
+      .applications__grid {
+        grid-template-columns: repeat(2, 1fr); } }
+    @media only screen and (max-width: 37.5em) {
+      .applications__grid {
+        grid-template-columns: repeat(1, 1fr); } }
   .applications__heading {
     font-weight: 700;
     color: #ff7d34;
     text-transform: uppercase;
     font-size: 3rem;
     font-style: italic; }
+    @media only screen and (max-width: 50em) {
+      .applications__heading {
+        font-size: 2.5rem;
+        margin-bottom: 2rem; } }
+    @media only screen and (max-width: 31.25em) {
+      .applications__heading {
+        font-size: 2rem; } }
 
 .application {
   padding: 1rem;

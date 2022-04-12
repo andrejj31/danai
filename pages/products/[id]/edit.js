@@ -60,6 +60,12 @@ export default function Edit(props) {
       label: "Категорија на продуктот",
       categories: categories,
     },
+    // {
+    //   name: "landingPage",
+    //   type: "select",
+    //   label: "Насловна страна",
+    //   categories: ["Да", "Не"],
+    // },
     { name: "image", type: "file", label: "Фотографија од продуктот" },
   ];
   const req = {

@@ -6,14 +6,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslation } from "next-i18next";
-
 export default function Contact() {
   const { t } = useTranslation("home");
   const removeRef = useRef();
 
   useEffect(() => {
     setTimeout(() => {
-      removeRef.current.remove();
+      if (removeRef.current) {
+        removeRef.current.remove();
+      }
     }, 2000);
   }, []);
 
