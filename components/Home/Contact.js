@@ -14,7 +14,7 @@ export default function Contact() {
   useEffect(() => {
     setTimeout(() => {
       removeRef.current.remove();
-    }, 500);
+    }, 2000);
   }, []);
 
   return (
