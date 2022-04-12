@@ -5,10 +5,8 @@ import FormCustom from "../../../components/Reusable/FormCustom";
 export default function Edit(props) {
   const { data: categories } = props.categories;
   const { data: product } = props.product;
-  console.log(product._id);
 
   product.category = product.category.name;
-  console.log(categories);
   const validate = Yup.object({
     name: Yup.string().required("Ова поле е задолжително"),
     description: Yup.string().required("Ова поле е задолжително"),

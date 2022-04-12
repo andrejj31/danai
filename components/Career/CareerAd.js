@@ -14,7 +14,6 @@ export default function CareerAd({ ad, setPopup }) {
     qualifications = translation[locale].qualifications;
   }
 
-  console.log(status);
   const adminButtons = [
     {
       title: "Види ги сите апликации",

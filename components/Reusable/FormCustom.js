@@ -67,7 +67,6 @@ export default function FormCustom({
 
             setBody(fData);
           } else {
-            console.log(values);
             setBody(values);
           }
         }}

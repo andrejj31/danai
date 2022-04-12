@@ -49,7 +49,6 @@ export async function getServerSideProps(context) {
   // const category = await fetch(
   //   `${process.env.NEXT_PUBLIC_SERVER_API}categories?${query}&lang=${locale}`
   // );
-  console.log(context.query.category);
   const data = await res.json();
   const pageCount = Math.ceil(
     parseInt(data.totalCount) / parseInt(itemsPerPage)

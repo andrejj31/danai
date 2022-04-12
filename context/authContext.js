@@ -16,7 +16,6 @@ const AuthProvider = ({ children }) => {
         }
       );
       const json = await res.json();
-      console.log(json);
       const fetchedUser = json?.data?.data;
 
       if (fetchedUser._id) {

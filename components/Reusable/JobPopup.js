@@ -16,7 +16,6 @@ export default function JobPopup(props) {
     number: Yup.string().required("Ова поле е задолжително"),
   });
 
-  console.log(id);
   const initialValues = {
     name: "",
     address: "",

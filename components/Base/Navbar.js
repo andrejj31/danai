@@ -10,7 +10,6 @@ export default function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
   const { user, initializing } = useAuthContext();
 
-  console.log(user, initializing);
   return (
     <header className="nav">
       <div className="nav__primary bg-light">

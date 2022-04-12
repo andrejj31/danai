@@ -4,7 +4,6 @@ import Application from "../../../components/Career/Application";
 export default function index({ data }) {
   const { data: job } = data;
   const { name, applications } = job;
-  console.log(applications);
   return (
     <section className="applications bg-light spacing-sm">
       <div className="container">
