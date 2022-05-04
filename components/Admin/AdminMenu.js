@@ -29,9 +29,6 @@ export default function AdminMenu() {
         <li>
           <Link href="/admin/brands">Брендови</Link>
         </li>
-        <li>
-          <Link href="/admin/promotions">Промоции</Link>
-        </li>
       </ul>
     </div>
   );
