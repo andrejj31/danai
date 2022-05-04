@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
 import FormCustom from "../../../components/Reusable/FormCustom";
+import AdminMenu from "../../../components/Admin/AdminMenu";
 
 export default function Product(props) {
   const validate = Yup.object({
@@ -87,8 +88,9 @@ export default function Product(props) {
   };
 
   return (
-    <div className="form-basic__bg bg-light spacing-sm">
+    <section className="admin bg-light spacing-sm">
       <div className="container">
+        <AdminMenu></AdminMenu>
         <h1 className="form-basic__heading">Креирај продукт</h1>
         <FormCustom
           validate={validate}
@@ -100,7 +102,7 @@ export default function Product(props) {
           messages={{ success: "Успешно го креиравте продуктот!" }}
         ></FormCustom>
       </div>
-    </div>
+    </section>
   );
 }
 

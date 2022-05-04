@@ -27,23 +27,23 @@ export default function Product({ setPopup, className, product }) {
     description = translation[locale].description;
   }
 
-  const adminButtons = [
-    {
-      title: "Измени го продуктот",
-      type: "edit",
-      location: `/products/${id}/edit`,
-    },
-    {
-      title: "Избриши го продуктот",
-      type: "delete",
-      location: `products/${id}`,
-      req: {
-        method: "DELETE",
-        data: { delete: "true" },
-        options: { credentials: "include" },
-      },
-    },
-  ];
+  // const adminButtons = [
+  //   {
+  //     title: "Измени го продуктот",
+  //     type: "edit",
+  //     location: `/products/${id}/edit`,
+  //   },
+  //   {
+  //     title: "Избриши го продуктот",
+  //     type: "delete",
+  //     location: `products/${id}`,
+  //     req: {
+  //       method: "DELETE",
+  //       data: { delete: "true" },
+  //       options: { credentials: "include" },
+  //     },
+  //   },
+  // ];
 
   return (
     <div className={`product ${className ? className : ""}`}>
@@ -66,7 +66,7 @@ export default function Product({ setPopup, className, product }) {
         <span>{quantity}</span>
       </div>
       <button
-        className="cta-linear"
+        className="cta-linear product__cta"
         onClick={() =>
           setPopup({
             open: true,
@@ -76,12 +76,13 @@ export default function Product({ setPopup, className, product }) {
             barCode,
             quantity,
             transportPackages,
+            image,
           })
         }
       >
         Прочитај повеќе
       </button>
-      <AdminOptions btns={adminButtons}></AdminOptions>
+      {/* <AdminOptions btns={adminButtons}></AdminOptions> */}
     </div>
   );
 }

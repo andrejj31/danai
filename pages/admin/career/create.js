@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
 import FormCustom from "../../../components/Reusable/FormCustom";
+import AdminMenu from "../../../components/Admin/AdminMenu";
 
-export default function Edit({ data }) {
-  const { data: job } = data;
+export default function Job(props) {
   const validate = Yup.object({
     name: Yup.string().required("Ова поле е задолжително"),
     description: Yup.string().required("Ова поле е задолжително"),
@@ -16,7 +16,17 @@ export default function Edit({ data }) {
   });
 
   const initialValues = {
-    ...job,
+    name: "",
+    description: "",
+    status: "",
+    qualifications: [],
+    translation: {
+      en: {
+        name: "",
+        description: "",
+        qualifications: [],
+      },
+    },
   };
 
   const fields = [
@@ -58,62 +68,27 @@ export default function Edit({ data }) {
       label: "Квалификации за оваа работа (англиски)",
     },
   ];
-
   const req = {
-    url: `jobs/${job._id}`,
-    method: "PATCH",
-    options: { credentials: "include" },
+    url: `jobs`,
+    method: "POST",
   };
 
   return (
-    <div className="form-basic__bg bg-light spacing-sm">
+    <section className="admin bg-light spacing-sm">
       <div className="container">
-        <h1 className="form-basic__heading">Измени го огласот</h1>
+        <AdminMenu></AdminMenu>
+        <h1 className="form-basic__heading">Креирај оглас</h1>
         <FormCustom
           validate={validate}
           initialValues={initialValues}
           fields={fields}
           req={req}
-          ctaTitle={"Измени го огласот"}
-          messages={{ success: "Успешно го изменивте огласот!" }}
+          ctaTitle={"Креирај оглас"}
+          messages={{ success: "Успешно го креиравте огласот!" }}
         ></FormCustom>
       </div>
-    </div>
+    </section>
   );
 }
 
-// export async function getStaticPaths() {
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}jobs`);
-//   const dataReady = await res.json();
-
-//   const paths = dataReady.data.map((job) => ({
-//     params: {
-//       id: job._id,
-//     },
-//   }));
-
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// }
-
-// export async function getStaticProps({ params }) {
-//   const { id } = params;
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}jobs/${id}`);
-//   const data = await res.json();
-//   return {
-//     props: data,
-//     revalidate: 1,
-//   };
-// }
-export async function getServerSideProps(context) {
-  const id = context.params.id;
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}jobs/${id}`);
-  const data = await res.json();
-  return {
-    props: data,
-  };
-}
-
-Edit.requireAuth = true;
+Job.requireAuth = true;

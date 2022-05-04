@@ -66,7 +66,7 @@ export default function JobPopup(props) {
         opacity: show ? "1" : "0",
       }}
     >
-      <div className="popup-job">
+      <div className="popup popup-job">
         <h4>Апликациja за работна позиција: {name}</h4>
         <FormCustom
           validate={validate}
@@ -78,7 +78,7 @@ export default function JobPopup(props) {
             success: "Успешно аплициравте за оваа работна позиција!",
           }}
         ></FormCustom>
-        <div className="popup-job__close" onClick={handleClose}>
+        <div className="popup__close popup-job__close" onClick={handleClose}>
           <FontAwesomeIcon icon={faXmark} />
         </div>
       </div>

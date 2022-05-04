@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import * as Yup from "yup";
-import FormCustom from "../../../components/Reusable/FormCustom";
+import FormCustom from "../../../../components/Reusable/FormCustom";
+import AdminMenu from "../../../../components/Admin/AdminMenu";
 
-export default function Job(props) {
+export default function Edit({ data }) {
+  const { data: job } = data;
   const validate = Yup.object({
     name: Yup.string().required("Ова поле е задолжително"),
     description: Yup.string().required("Ова поле е задолжително"),
@@ -15,17 +17,7 @@ export default function Job(props) {
   });
 
   const initialValues = {
-    name: "",
-    description: "",
-    status: "",
-    qualifications: [],
-    translation: {
-      en: {
-        name: "",
-        description: "",
-        qualifications: [],
-      },
-    },
+    ...job,
   };
 
   const fields = [
@@ -67,37 +59,38 @@ export default function Job(props) {
       label: "Квалификации за оваа работа (англиски)",
     },
   ];
+
   const req = {
-    url: `jobs`,
-    method: "POST",
+    url: `jobs/${job._id}`,
+    method: "PATCH",
+    options: { credentials: "include" },
   };
 
   return (
-    <div className="form-basic__bg bg-light spacing-sm">
+    <section className="admin bg-light spacing-sm">
       <div className="container">
-        <h1 className="form-basic__heading">Креирај оглас</h1>
+        <AdminMenu></AdminMenu>
+        <h1 className="form-basic__heading">Измени го огласот</h1>
         <FormCustom
           validate={validate}
           initialValues={initialValues}
           fields={fields}
           req={req}
-          ctaTitle={"Креирај оглас"}
-          messages={{ success: "Успешно го креиравте огласот!" }}
+          ctaTitle={"Измени го огласот"}
+          messages={{ success: "Успешно го изменивте огласот!" }}
         ></FormCustom>
       </div>
-    </div>
+    </section>
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_API}product-categories`
-  );
-  const categories = await res.json();
+export async function getServerSideProps(context) {
+  const id = context.params.id;
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}jobs/${id}`);
+  const data = await res.json();
   return {
-    props: categories,
-    revalidate: 1,
+    props: data,
   };
 }
 
-Job.requireAuth = true;
+Edit.requireAuth = true;

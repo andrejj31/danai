@@ -4,8 +4,8 @@ import { useTranslation } from "next-i18next";
 export default function Article() {
   const { t } = useTranslation("home");
   return (
-    <section className="article spacing">
-      <div className="bg-light bg-padding">
+    <section className="article">
+      <div className="bg-light">
         <div className="article__content container split">
           <div className="article__typography">
             <h3 className="heading-orange">{t("about_heading")}</h3>

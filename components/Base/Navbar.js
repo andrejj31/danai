@@ -22,6 +22,9 @@ export default function Navbar() {
               <Link href="/products">Производи</Link>
             </li>
             <li>
+              <Link href="/about">За нас</Link>
+            </li>
+            <li>
               <Link href="/career">Кариера</Link>
             </li>
             {!user && !initializing ? (
@@ -30,17 +33,7 @@ export default function Navbar() {
               </li>
             ) : (
               <li>
-                <Link href="">Админ</Link>
-                <ul className="nav__additional">
-                  <li>
-                    <li className="nav__additional-li">
-                      <Link href="/admin/create/product">Креирај продукт</Link>
-                    </li>
-                    <li className="nav__additional-li">
-                      <Link href="/admin/create/job">Креирај оглас</Link>
-                    </li>
-                  </li>
-                </ul>
+                <Link href="/admin/products">Админ</Link>
               </li>
             )}
           </ul>

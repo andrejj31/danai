@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useRouter } from "next/router";
-import AdminOptions from "../Reusable/AdminOptions";
 
 export default function CareerAd({ ad, setPopup }) {
   const router = useRouter();
@@ -13,29 +12,6 @@ export default function CareerAd({ ad, setPopup }) {
     description = translation[locale].description;
     qualifications = translation[locale].qualifications;
   }
-
-  const adminButtons = [
-    {
-      title: "Види ги сите апликации",
-      type: "edit",
-      location: `/career/${id}`,
-    },
-    {
-      title: "Измени го огласот",
-      type: "edit",
-      location: `/career/${id}/edit`,
-    },
-    {
-      title: "Избриши го огласот",
-      type: "delete",
-      location: `jobs/${id}`,
-      req: {
-        method: "DELETE",
-        data: { delete: "true" },
-        options: { credentials: "include" },
-      },
-    },
-  ];
 
   return (
     <article className="career__ad">
@@ -71,8 +47,6 @@ export default function CareerAd({ ad, setPopup }) {
       ) : (
         <></>
       )}
-
-      <AdminOptions btns={adminButtons}></AdminOptions>
     </article>
   );
 }

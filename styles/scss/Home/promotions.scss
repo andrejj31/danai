@@ -1,0 +1,13 @@
+.promotions {
+  &__wrapper {
+    padding: 3rem 0;
+    > div {
+      box-shadow: $box-shadow-light;
+      > img {
+        border-radius: 1rem;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

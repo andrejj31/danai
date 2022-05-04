@@ -1,25 +1,33 @@
 .landing {
-  background: linear-gradient(
-      100.71deg,
-      rgba(232, 83, 19, 0.5) 26.83%,
-      rgba(227, 227, 211, 0.145) 101.18%,
-      rgba(201, 194, 191, 0.405) 77.18%
-    ),
-    url(https://www.danaifarm.com.mk/sites/default/files/aboutHome_0.png);
+  // linear-gradient(
+  //     100.71deg,
+  //     rgba(232, 83, 19, 0.5) 26.83%,
+  //     rgba(227, 227, 211, 0.145) 101.18%,
+  //     rgba(201, 194, 191, 0.405) 77.18%
+  //   ),
+  background: url("../../public/naslovna.jpg");
   background-size: cover;
-  height: 45rem;
+  background-position: center;
+  height: 60rem;
   position: relative;
+
+  @media only screen and (max-width: $bp-smallest) {
+    height: 45rem;
+  }
   &__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 10rem;
+    padding-top: 12rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+      padding-top: 10rem;
+    }
 
     > h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      color: $color-white;
-      letter-spacing: 0.5rem;
+      font-size: 6rem;
+      font-weight: 800;
+      color: #353232;
 
       @media only screen and (max-width: $bp-smallest) {
         font-size: 3.5rem;
@@ -29,11 +37,16 @@
 
     > p {
       font-weight: 600;
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-style: italic;
-      color: $color-white;
+      color: #353232;
+      width: 60%;
+      @media only screen and (max-width: $bp-medium) {
+        width: 85%;
+      }
       @media only screen and (max-width: $bp-smallest) {
         font-size: 1.8rem;
+        width: 100%;
       }
     }
   }
@@ -41,10 +54,14 @@
   &__brands {
     position: absolute;
     width: inherit;
-    bottom: -3rem;
+    bottom: -5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    & > div {
+      padding: 2rem 0;
+    }
   }
 
   &__brand {
@@ -52,8 +69,12 @@
     border-radius: 1.5rem;
     box-shadow: $box-shadow-light;
     padding: 2rem 3rem;
-    .cta-classic {
-      display: none;
+    // .cta-classic {
+    //   display: none;
+    // }
+
+    button {
+      margin-top: 1rem;
     }
     h4 {
       font-size: 4rem;

@@ -9,7 +9,7 @@ export default function AdminOptions({ btns }) {
       {user && !initializing && (
         <div className="admin-options">
           <div className="admin-btns">
-            {btns.map((btn, i) => {
+            {btns().map((btn, i) => {
               return <AdminOptionsBtn key={i} {...btn}></AdminOptionsBtn>;
             })}
           </div>

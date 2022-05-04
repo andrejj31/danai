@@ -36,6 +36,9 @@
       @media only screen and (max-width: $bp-medium) {
         font-size: 1.3rem;
       }
+      @media only screen and (max-width: 25em) {
+        font-size: 1.1rem;
+      }
       li {
         position: relative;
 
@@ -155,8 +158,8 @@
     }
 
     &-mobile {
-      opacity: 1;
-      visibility: visible;
+      opacity: 1 !important;
+      visibility: visible !important;
     }
     &-separator {
       width: 1px;

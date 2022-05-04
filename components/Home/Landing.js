@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
+import Brand from "./Brand";
+import BrandPopup from "../Reusable/BrandPopup";
 
-export default function Landing() {
+export default function Landing({ brands }) {
+  console.log(brands);
   const [sliderRef, instanceRef] = useKeenSlider(
     {
       slides: {
@@ -66,46 +69,31 @@ export default function Landing() {
       },
     ]
   );
+
+  const [popup, setPopup] = useState({ open: false });
+
   return (
-    <section className="landing">
-      <div className="container">
-        <div className="landing__content">
-          <h1>НАШИ БРЕНДОВИ</h1>
-          <p>
-            Danai Farm разви неколку свои брендови кои се релевантни на пазарот
-            брендови кои се релевантни на пазарот брендови кои се релевантни на
-            пазарот
-          </p>
-        </div>
-        <div className="landing__brands container">
-          <div className="keen-slider " ref={sliderRef}>
-            <div className="landing__brand keen-slider__slide">
-              <h4 data-before-content="Proderm">Proderm</h4>
-              <button className="cta-classic">повеќе &rarr;</button>
-            </div>
-            <div className="landing__brand keen-slider__slide">
-              <h4 data-before-content="Proderm">Proderm</h4>
-              <button className="cta-classic">повеќе &rarr;</button>
-            </div>
-            <div className="landing__brand keen-slider__slide">
-              <h4 data-before-content="Proderm">Proderm</h4>
-              <button className="cta-classic">повеќе &rarr;</button>
-            </div>
-            <div className="landing__brand keen-slider__slide">
-              <h4 data-before-content="Proderm">Proderm</h4>
-              <button className="cta-classic">повеќе &rarr;</button>
-            </div>
-            <div className="landing__brand keen-slider__slide">
-              <h4 data-before-content="Proderm">Proderm</h4>
-              <button className="cta-classic">повеќе &rarr;</button>
-            </div>
-            <div className="landing__brand keen-slider__slide">
-              <h4 data-before-content="Proderm">Proderm</h4>
-              <button className="cta-classic">повеќе &rarr;</button>
+    <>
+      <section className="landing">
+        <div className="container">
+          <div className="landing__content">
+            <h1>Наши брендови</h1>
+            <p>
+              Danai Farm разви неколку свои брендови кои се релевантни на
+              пазарот брендови кои се релевантни на пазарот брендови кои се
+              релевантни на пазарот
+            </p>
+          </div>
+          <div className="landing__brands container">
+            <div className="keen-slider " ref={sliderRef}>
+              {brands.map((brand, idx) => {
+                return <Brand {...brand} key={idx} setPopup={setPopup}></Brand>;
+              })}
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <BrandPopup popup={popup} setPopup={setPopup}></BrandPopup>
+    </>
   );
 }
